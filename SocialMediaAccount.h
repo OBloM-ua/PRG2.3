@@ -1,4 +1,7 @@
+#ifndef SOCIALMEDIAACCOUNT_H
+#define SOCIALMEDIAACCOUNT_H
 
+#include <unordered_map>
 #include "Person.h"
 
 using namespace std;
@@ -20,7 +23,6 @@ private:
 
     //  Startet  leer
     void add_msg(const string);
-
 public:
     SocialMediaAccount(string, shared_ptr<Person>);
 
@@ -63,3 +65,18 @@ public:
     ostream& print(ostream&) const;
     int calc_score(string);  //Liefert den Wert (5 + Laenge des Strings)%10
 };
+
+
+struct Administration{
+    unordered_map<string, shared_ptr<Person>> map;
+    //Instanzvariable.
+    string create_person(string name) ;
+    // Legt  Person  an  in  der Map.Falls key bereits existiert=>Ueberschreiben void del
+    void del_perso(string name);//Wenn keine  Person  gefunden −> Runtime  Error .
+    ostream& print(ostream& o )const;// Ausgabe.
+};
+
+
+
+
+#endif //SOCIALMEDIAACCOUNT_H

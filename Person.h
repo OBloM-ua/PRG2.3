@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include "SocialMediaAccount.h"
 
 
 using namespace std;
@@ -18,8 +19,9 @@ public:
 
     string get_name() const;
 
-    int add_account(string, int= 1); //  int  Variable  gibt  Accountmodus an.  1ist VipAccount.  0  ist  NormalAccount .
+    int add_account(string, int= 1); // int Variable gibt Accountmodus an.1 1ist VipAccount. 0 ist NormalAccount.
     bool remove_account(int);// Koennte  Account  mit Nummber  int  geloescht  werden
+
     bool share(shared_ptr<Person>,
                shared_ptr<SocialMediaAccount>);// this  hat SocialMediaAccount ,  Parameter bekommt  SocialMediaAccount  falls  nicht schon  vorhanden.
 
